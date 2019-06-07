@@ -48,6 +48,7 @@ var routingTable = map[string]http.HandlerFunc{
 	"CreateTopic":               sns.CreateTopic,
 	"DeleteTopic":               sns.DeleteTopic,
 	"Subscribe":                 sns.Subscribe,
+	"GetTopicAttributes":        sns.GetTopicAttributes,
 	"ConfirmSubscription":       sns.ConfirmSubscription,
 	"SetSubscriptionAttributes": sns.SetSubscriptionAttributes,
 	"GetSubscriptionAttributes": sns.GetSubscriptionAttributes,

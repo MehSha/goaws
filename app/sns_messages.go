@@ -93,6 +93,12 @@ type ListSubscriptionsResult struct {
 	Subscriptions TopicSubscriptions `xml:"Subscriptions"`
 }
 
+type GetTopicAttributesResponse struct {
+	Xmlns string `xml:"xmlns,attr"`
+	// Result   ListSubscriptionsResult `xml:"ListSubscriptionsResult"`
+	Metadata ResponseMetadata `xml:"ResponseMetadata"`
+}
+
 type ListSubscriptionsResponse struct {
 	Xmlns    string                  `xml:"xmlns,attr"`
 	Result   ListSubscriptionsResult `xml:"ListSubscriptionsResult"`

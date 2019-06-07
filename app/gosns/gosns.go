@@ -299,6 +299,18 @@ func ListSubscriptions(w http.ResponseWriter, req *http.Request) {
 	SendResponseBack(w, req, respStruct, content)
 }
 
+func GetTopicAttributes(w http.ResponseWriter, req *http.Request) {
+	content := req.FormValue("ContentType")
+	// topicArn := req.FormValue("TopicArn")
+
+	uuid, _ := common.NewUUID()
+	respStruct := app.GetTopicAttributesResponse{}
+	respStruct.Xmlns = "http://queue.amazonaws.com/doc/2012-11-05/"
+	respStruct.Metadata.RequestId = uuid
+
+	SendResponseBack(w, req, respStruct, content)
+}
+
 func ListSubscriptionsByTopic(w http.ResponseWriter, req *http.Request) {
 	content := req.FormValue("ContentType")
 	topicArn := req.FormValue("TopicArn")
